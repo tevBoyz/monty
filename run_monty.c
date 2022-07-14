@@ -1,3 +1,4 @@
+#define _XOPEN_SOURCE 700
 #include "monty.h"
 
 int is_empty_line(char *line, char *delim);
@@ -112,7 +113,7 @@ void (*op_func)(stack_t **, unsigned int);
 if (init_stack(&stack) == EXIT_FAILURE)
 return (EXIT_FAILURE);
 
-while (fgets(line, len, script_fd) != NULL)
+while (getline(&line, &len, script_fd) != -1)
 {
 line_number++;
 opcode_tok = strtow(line, DELIMS);
