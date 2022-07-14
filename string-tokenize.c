@@ -88,7 +88,7 @@ int get_word_length(char *str, char *delims)
 {
 int wlen = 0, pending = 1, i = 0;
 
-while (*(str + 1))
+while (*(str + i))
 {
 if (is_delim(str[i], delims))
 pending = 1;
@@ -112,7 +112,7 @@ int get_word_count(char *str, char *delims)
 {
 int wc = 0, pending = 1, i = 0;
 
-while (*(str + 1))
+while (*(str + i))
 {
 if (is_delim(str[i], delims))
 pending = 1;
@@ -138,7 +138,7 @@ char *get_next_word(char *str, char *delims)
 int pending = 0;
 int i = 0;
 
-while (*(str + 1))
+while (*(str + i))
 {
 if (is_delim(str[i], delims))
 pending = 1;

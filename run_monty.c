@@ -110,8 +110,6 @@ size_t len = 0, exit_status = EXIT_SUCCESS;
 unsigned int line_number = 0, prev_tok_len = 0;
 void (*op_func)(stack_t **, unsigned int);
 
-printf("int main");
-
 if (init_stack(&stack) == EXIT_FAILURE)
 return (EXIT_FAILURE);
 
