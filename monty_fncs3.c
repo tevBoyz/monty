@@ -44,7 +44,7 @@ printf("%c\n", (*stack)->next->n);
  */
 void monty_pstr(stack_t **stack, unsigned int line_number)
 {
-stack_t *temp = (*stac)->next;
+stack_t *temp = (*stack)->next;
 
 while (temp && temp->n != 0 && (temp->n && temp->n <= 127))
 {

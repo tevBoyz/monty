@@ -15,7 +15,7 @@ if ((*stack)->next == NULL || (*stack)->next->next == NULL)
 return;
 
 top = (*stack)->next;
-bottom = (stack)->next;
+bottom = (*stack)->next;
 while (bottom->next != NULL)
 bottom = bottom->next;
 
@@ -43,13 +43,13 @@ if ((*stack)->next == NULL || (*stack)->next->next == NULL)
 return;
 
 top = (*stack)->next;
-bottom = (stack)->next;
+bottom = (*stack)->next;
 while (bottom->next != NULL)
 bottom = bottom->next;
 
 bottom->prev->next = NULL;
 (*stack)->next = bottom;
-bottom->pre = *stack;
+bottom->prev = *stack;
 bottom->next = top;
 top->prev = bottom;
 

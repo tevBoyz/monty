@@ -7,6 +7,8 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <sys/uio.h>
+#include <ctype.h>
 #include <fcntl.h>
 
 #define STACK 0
@@ -80,7 +82,7 @@ char *get_int(int n);
 
 /* Error handling */
 int usage_error(void);
-int molloc_error(void);
+int malloc_error(void);
 int f_open_error(char *filename);
 int unknown_op_error(char *opcode, unsigned int line_number);
 int no_int_error(unsigned int line_number);

@@ -86,7 +86,7 @@ if ((*stack)->next == NULL)
 set_op_tok_error(pint_error(line_number));
 return;
 }
-printf("%d\n", (*stack)->next->m);
+printf("%d\n", (*stack)->next->n);
 }
 
 /**
@@ -101,14 +101,14 @@ void monty_pop(stack_t **stack, unsigned int line_number)
 stack_t *temp = NULL;
 if ((*stack)->next == NULL)
 {
-set_op_tok_error(pop(line_number));
+set_op_tok_error(pop_error(line_number));
 return;
 }
 temp = (*stack)->next->next;
 free((*stack)->next);
-if (next)
+if (temp)
 temp->prev = *stack;
-(*stack)->next = next;
+(*stack)->next = temp;
 }
 
 /**
