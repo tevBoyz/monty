@@ -22,11 +22,11 @@ if (opcode_tok[1] == NULL)
 set_op_tok_error(no_int_error(line_number));
 return;
 }
-for (i = 0; opcode_tok[1][1]; i++)
+for (i = 0; opcode_tok[1][i]; i++)
 {
-if (opcode_tok[1][1] == '-' && i == 0)
+if (opcode_tok[1][i] == '-' && i == 0)
 continue;
-if (opcode_tok[1][1] < '0' || opcode_tok[1][1] > '9')
+if (opcode_tok[1][i] < '0' || opcode_tok[1][i] > '9')
 {
 set_op_tok_error(no_int_error(line_number));
 return;

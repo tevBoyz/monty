@@ -15,6 +15,7 @@ int main(int argc, char **argv)
 {
 FILE *script_fd = NULL;
 int exit_code = EXIT_SUCCESS;
+printf("hi");
 
 if (argc != 2)
 return (usage_error());

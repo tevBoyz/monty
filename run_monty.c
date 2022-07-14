@@ -1,7 +1,7 @@
 #define _XOPEN_SOURCE 700
 #include "monty.h"
 
-int is_empty_line(char *line, char *delim);
+int is_empty_line(char *line, char *delims);
 void (*get_op_func(char *opcode))(stack_t **, unsigned int);
 
 
@@ -110,6 +110,8 @@ size_t len = 0, exit_status = EXIT_SUCCESS;
 unsigned int line_number = 0, prev_tok_len = 0;
 void (*op_func)(stack_t **, unsigned int);
 
+printf("int main");
+
 if (init_stack(&stack) == EXIT_FAILURE)
 return (EXIT_FAILURE);
 
@@ -130,7 +132,7 @@ free_tokens();
 continue;
 }
 op_func = get_op_func(opcode_tok[0]);
-if (opcode_tok == NULL)
+if (op_func == NULL)
 {
 free_stack(&stack);
 exit_status = unknown_op_error(opcode_tok[0], line_number);
